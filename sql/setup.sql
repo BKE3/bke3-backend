@@ -23,4 +23,5 @@ INSERT INTO birds (
 VALUES
 ('Cyanocitta','Blue Jay', 'Oak and pin woods, suburban gardens, groves, towns.', '7 years', false, 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Blue_jay_in_PP_%2830960%29.jpg/440px-Blue_jay_in_PP_%2830960%29.jpg'),
 ('Strigiformes', 'Owl', 'coniferous forests, mountains, deserts, and plains', '5-12 years in the wild', false, 'https://cdn.britannica.com/86/34386-050-25B31B35/Great-horned-owl.jpg'),
-('Oxyura jamaicensis','Ruddy Duck', 'Fresh marshes, ponds, lakes; in winter, salt bays.', '13 years', true, 'https://www.thespruce.com/why-some-birds-dont-fly-385428')
+('Oxyura jamaicensis','Ruddy Duck', 'Fresh marshes, ponds, lakes; in winter, salt bays.', '13 years', true, 'https://www.allaboutbirds.org/guide/assets/photo/302124271-480px.jpg
+')
