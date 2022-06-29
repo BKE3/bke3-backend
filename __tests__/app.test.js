@@ -20,6 +20,20 @@ describe('backend-express-template routes', () => {
     expect(resp.body.id).toBe('1');
     expect(resp.body.latin_name).toBe('Cyanocitta');
   });
+
+  it('createBird should create a new bird', async () => {
+    const resp = await (await request(app).post('/birds')).send({
+      latin_name: 'Psittaciformes',
+      common_name: 'Parrot',
+      habitat: 'woodlands, rainforests, palm forests, savannas, grasslands, desert edges, scrubland',
+      life_expectancy: '40 to 70 years',
+      flightless: 'true',
+      image_url: 'https://cdn.shopify.com/s/files/1/1111/3280/files/parrot-hero-slide_5f608557-2722-4363-964c-856af23751ad_600x600.jpg?v=1608776007'
+    });
+
+      expect(resp.status).toEqual(200);
+      expect(resp.body.latin_name).toEqual('Psittaciformes');
+    });
   afterAll(() => {
     pool.end();
   });
