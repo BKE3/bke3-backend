@@ -40,14 +40,24 @@ describe('backend-express-template routes', () => {
     const resp = await request(app).put('/api/v1/birds/update/1').send({
       latin_name: 'Psittaciformes',
       common_name: 'Parrot',
-      habitat: 'woodlands, rainforests, palm forests, savannas, grasslands, desert edges, scrubland',
+      habitat:
+        'woodlands, rainforests, palm forests, savannas, grasslands, desert edges, scrubland',
       life_expectancy: '40 to 70 years',
       flightless: false,
-      image_url: 'https://cdn.shopify.com/s/files/1/1111/3280/files/parrot-hero-slide_5f608557-2722-4363-964c-856af23751ad_600x600.jpg?v=1608776007',
+      image_url:
+        'https://cdn.shopify.com/s/files/1/1111/3280/files/parrot-hero-slide_5f608557-2722-4363-964c-856af23751ad_600x600.jpg?v=1608776007',
     });
     console.log(resp.body);
     expect(resp.status).toEqual(200);
     expect(resp.body.latin_name).toEqual('Psittaciformes');
+  });
+
+  it('should delete bird by id', async () => {
+    const resp = await request(app).delete('/api/v1/birds/delete/1');
+    expect(resp.status).toEqual(200);
+
+    const { body } = await request(app).get('/api/v1/birds/1');
+    expect(body.id).toEqual(null);
   });
   afterAll(() => {
     pool.end();
